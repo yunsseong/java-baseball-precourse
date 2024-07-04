@@ -8,6 +8,7 @@ public class Application {
         View view = new View();
 
         Controller controller = Controller.getController(model, view);
+        controller.setting();
         controller.play();
     }
 }
