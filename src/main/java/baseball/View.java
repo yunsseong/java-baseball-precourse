@@ -15,10 +15,6 @@ public class View {
         System.out.println(message);
     }
 
-    public void printResult(List<String> resultList){
-
-    }
-
     public String input(String message){
         print(message);
         return Console.readLine();
