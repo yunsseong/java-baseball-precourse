@@ -7,18 +7,19 @@ import java.util.List;
 public class View {
     private String userInput;
 
-    public void print(String message){
+    public void print(String message) {
         System.out.print(message);
     }
 
-    public void println(String message){
+    public void println(String message) {
         System.out.println(message);
     }
-    public void printResult(List<Integer> resultList){
+
+    public void printResult(List<Integer> resultList) {
         Integer ball = resultList.get(0);
         Integer strike = resultList.get(1);
 
-        if(ball == 0 && strike == 0) {
+        if (ball == 0 && strike == 0) {
             println("낫싱");
         } else {
             StringBuilder stringBuilder = new StringBuilder();
@@ -34,10 +35,11 @@ public class View {
         }
     }
 
-    public String input(String message, Boolean printLine){
-        if(printLine)
+    public String input(String message, Boolean printLine) {
+        if (printLine)
             println(message);
         else
             print(message);
         return Console.readLine();
     }
+}
