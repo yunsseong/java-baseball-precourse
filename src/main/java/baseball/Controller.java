@@ -16,8 +16,11 @@ public class Controller {
         return controller;
     }
 
-    public void play(){
+    public void setting(){
         model.generateNumber();
+    }
 
+    public void play(){
+        String userInput = view.input("숫자를 입력해주세요 : ");
     }
 }
