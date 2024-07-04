@@ -11,6 +11,7 @@ public class Model {
 
     public void generateNumber(){
         int randomInteger;
+        opponentNumber = new ArrayList<>();
         while(true){
             randomInteger = Randoms.pickNumberInRange(1, 9);
             if(!opponentNumber.contains(Integer.toString(randomInteger)))
@@ -32,9 +33,6 @@ public class Model {
                 ball++;
             }
         }
-
         return new ArrayList<>(Arrays.asList(ball, strike)) ;
-
-
     }
 }
