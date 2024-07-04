@@ -50,6 +50,11 @@ public class Controller {
         boolean isGameEnd = statusCheck(result.get(1));
         if(isGameEnd) {
             view.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+            if(userDecisionCheck()) {
+                setting();
+            }else {
+                System.exit(0);
+            }
         }
         play();
     }
