@@ -21,18 +21,20 @@ public class View {
 
         if (ball == 0 && strike == 0) {
             println("낫싱");
-        } else {
-            StringBuilder stringBuilder = new StringBuilder();
-            if (ball != 0) {
-                stringBuilder.append(ball).append("볼");
-                if (strike != 0) {
-                    stringBuilder.append(" ").append(strike).append("스트라이크");
-                }
-            } else {
-                stringBuilder.append(strike).append("스트라이크");
-            }
-            println(stringBuilder.toString());
+            return;
         }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        if (ball != 0) {
+            stringBuilder.append(ball).append("볼");
+            if (strike != 0) {
+                stringBuilder.append(" ").append(strike).append("스트라이크");
+            }
+        } else {
+            stringBuilder.append(strike).append("스트라이크");
+        }
+        println(stringBuilder.toString());
+
     }
 
     public String input(String message, Boolean printLine) {
