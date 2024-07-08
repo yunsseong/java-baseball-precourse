@@ -1,2 +1,4 @@
-package baseball.model;public class ComputerNumGenerator {
+package baseball.model;
+
+public class ComputerNumGenerator {
 }
