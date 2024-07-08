@@ -1,2 +1,4 @@
-package baseball.view;public class MessagePrinter {
+package baseball.view;
+
+public class MessagePrinter {
 }
