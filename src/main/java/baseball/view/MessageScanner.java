@@ -1,2 +1,4 @@
-package baseball.view;public class MessageScanner {
+package baseball.view;
+
+public class MessageScanner {
 }
