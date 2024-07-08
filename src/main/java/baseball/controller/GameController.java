@@ -15,4 +15,8 @@ public class GameController {
 	public void init() {
 		computerNumGenerator.generateComputerNum();
 	}
+
+	public void run() {
+		message.print("숫자를 입력해주세요 : ");
+	}
 }
