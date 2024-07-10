@@ -1,5 +1,6 @@
 package baseball.view;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 import camp.nextstep.edu.missionutils.Console;
@@ -19,13 +20,30 @@ public class Message {
 		return Console.readLine();
 	}
 
-	public String validateUserNum(String userNum) throws IllegalArgumentException{
-		if(userNum.isEmpty())
+	public String validateUserNum(String userNum) throws IllegalArgumentException {
+		if (userNum.isEmpty())
 			throw new IllegalArgumentException();
-		if(userNum.length() != 3)
+		if (userNum.length() != 3)
 			throw new IllegalArgumentException();
-		if(!digitPattern.matcher(userNum).matches())
+		if (!digitPattern.matcher(userNum).matches())
 			throw new IllegalArgumentException();
 		return userNum;
+	}
+
+	public void printResult(List<Integer> result) {
+		int ballCount = result.get(0);
+		int strikeCount = result.get(1);
+
+		if (ballCount == 0 && strikeCount == 0)
+			this.print("낫싱");
+
+		if (ballCount != 0 && strikeCount == 0)
+			this.print(String.format("%d볼", ballCount));
+
+		if (ballCount == 0 && strikeCount != 0)
+			this.print(String.format("%d스트라이크", strikeCount));
+
+		if (ballCount != 0 && strikeCount != 0)
+			this.print(String.format("%d볼 %d스트라이크", ballCount, strikeCount));
 	}
 }
