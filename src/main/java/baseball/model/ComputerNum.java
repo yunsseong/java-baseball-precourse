@@ -8,8 +8,9 @@ import java.util.stream.Collectors;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class ComputerNum {
-	private final List<Integer> computerNumList = new ArrayList<>();
+	private List<Integer> computerNumList;
 	public void generateNumList() {
+		computerNumList = new ArrayList<>();
 		do {
 			Integer randomNum = Randoms.pickNumberInRange(1, 9);
 			if (!computerNumList.contains(randomNum))
