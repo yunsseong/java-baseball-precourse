@@ -45,15 +45,15 @@ public class Message {
 		int strikeCount = result.get(1);
 
 		if (ballCount == 0 && strikeCount == 0)
-			this.print("낫싱");
+			this.println("낫싱");
 
 		if (ballCount != 0 && strikeCount == 0)
-			this.print(String.format("%d볼", ballCount));
+			this.println(String.format("%d볼", ballCount));
 
 		if (ballCount == 0 && strikeCount != 0)
-			this.print(String.format("%d스트라이크", strikeCount));
+			this.println(String.format("%d스트라이크", strikeCount));
 
 		if (ballCount != 0 && strikeCount != 0)
-			this.print(String.format("%d볼 %d스트라이크", ballCount, strikeCount));
+			this.println(String.format("%d볼 %d스트라이크", ballCount, strikeCount));
 	}
 }
