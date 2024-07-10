@@ -1,22 +1,21 @@
 package baseball.controller;
 
-import baseball.model.ComputerNumGenerator;
+import java.util.List;
+
+import baseball.model.ComputerNum;
 import baseball.view.Message;
-import baseball.view.MessagePrinter;
-import baseball.view.MessageScanner;
 
 public class GameController {
-
-	private final ComputerNumGenerator computerNumGenerator;
+	private final ComputerNum computerNum;
 	private final Message message;
 
 	public GameController() {
-		this.computerNumGenerator = new ComputerNumGenerator();
+		this.computerNum = new ComputerNum();
 		this.message = new Message();
 	}
 
 	public void init() {
-		computerNumGenerator.generateComputerNum();
+		computerNum.generateNumList();
 	}
 
 	public void run() {
