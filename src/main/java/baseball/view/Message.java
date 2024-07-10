@@ -30,6 +30,16 @@ public class Message {
 		return userNum;
 	}
 
+	public String validateUserIntention(String userIntention){
+		if (userIntention.isEmpty())
+			throw new IllegalArgumentException();
+		if (userIntention.length() != 1)
+			throw new IllegalArgumentException();
+		if (!digitPattern.matcher(userIntention).matches())
+			throw new IllegalArgumentException();
+		return userIntention;
+	}
+
 	public void printResult(List<Integer> result) {
 		int ballCount = result.get(0);
 		int strikeCount = result.get(1);
