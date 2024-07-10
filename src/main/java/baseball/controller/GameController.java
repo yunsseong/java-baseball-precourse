@@ -30,9 +30,15 @@ public class GameController {
 		message.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
 		message.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
 		String userIntention = message.validateUserIntention(message.scanner());
+		if(userWantContinue(userIntention))
+			this.run();
 	}
 
 	public boolean isGameEnd(List<Integer> result) {
 		return !result.get(1).equals(3);
+	}
+
+	public boolean userWantContinue(String userIntention) {
+		return userIntention.equals("1");
 	}
 }
