@@ -21,6 +21,6 @@ public class GameController {
 	public void run() {
 		message.print("숫자를 입력해주세요 : ");
 		String userNum = message.validateUserNum(message.scanner());
-
+		List<Integer> compareResultList = computerNum.compareNum(userNum);
 	}
 }
