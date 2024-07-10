@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import camp.nextstep.edu.missionutils.Console;
 
 public class Message {
-	private final Pattern digitPattern = Pattern.compile("^[a-zA-Z]*$");
+	private final Pattern digitPattern = Pattern.compile("^[1-9]*$");
 
 	public void print(String message) {
 		System.out.print(message);
@@ -30,7 +30,7 @@ public class Message {
 		return userNum;
 	}
 
-	public String validateUserIntention(String userIntention){
+	public String validateUserIntention(String userIntention) {
 		if (userIntention.isEmpty())
 			throw new IllegalArgumentException();
 		if (userIntention.length() != 1)
