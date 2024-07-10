@@ -21,6 +21,7 @@ public class GameController {
 
 	public void run() {
 		message.print("숫자를 입력해주세요 : ");
-		String userNumber = message.scanner();
+		String userNum = message.validateUserNum(message.scanner());
+
 	}
 }

@@ -18,4 +18,14 @@ public class Message {
 	public String scanner() {
 		return Console.readLine();
 	}
+
+	public String validateUserNum(String userNum) throws IllegalArgumentException{
+		if(userNum.isEmpty())
+			throw new IllegalArgumentException();
+		if(userNum.length() != 3)
+			throw new IllegalArgumentException();
+		if(!digitPattern.matcher(userNum).matches())
+			throw new IllegalArgumentException();
+		return userNum;
+	}
 }
