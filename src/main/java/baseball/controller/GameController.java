@@ -2,8 +2,11 @@ package baseball.controller;
 
 import baseball.model.ComputerNumGenerator;
 import baseball.view.Message;
+import baseball.view.MessagePrinter;
+import baseball.view.MessageScanner;
 
 public class GameController {
+
 	private final ComputerNumGenerator computerNumGenerator;
 	private final Message message;
 
@@ -18,5 +21,6 @@ public class GameController {
 
 	public void run() {
 		message.print("숫자를 입력해주세요 : ");
+		String userNumber = message.scanner();
 	}
 }
