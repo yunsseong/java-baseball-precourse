@@ -15,7 +15,7 @@ public class ComputerNum {
 			Integer randomNum = Randoms.pickNumberInRange(1, 9);
 			if (!computerNumList.contains(randomNum))
 				computerNumList.add(randomNum);
-		} while (computerNumList.size() != 3);
+		} while (computerNumList.size() != GameNum.LENGTH);
 	}
 	public List<Integer> stringToIntegerList(String string){
 		return string.chars()
@@ -30,7 +30,7 @@ public class ComputerNum {
 
 		List<Integer> userNumList = stringToIntegerList(userNum);
 
-		for(int i = 0; i < 3; i++){
+		for(int i = 0; i < GameNum.LENGTH; i++){
 			if(computerNumList.get(i).equals(userNumList.get(i)))
 				strikeCount++;
 
