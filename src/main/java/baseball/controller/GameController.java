@@ -42,6 +42,6 @@ public class GameController {
 	}
 
 	public boolean userWantContinue(String userIntention) {
-		return userIntention.equals("1");
+		return userIntention.equals(UserIntention.WantContinue);
 	}
 }
