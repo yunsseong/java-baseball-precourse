@@ -3,6 +3,7 @@ package baseball.view;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import baseball.model.GameNum;
 import camp.nextstep.edu.missionutils.Console;
 
 public class Message {
@@ -23,7 +24,7 @@ public class Message {
 	public String validateUserNum(String userNum) throws IllegalArgumentException {
 		if (userNum.isEmpty())
 			throw new IllegalArgumentException();
-		if (userNum.length() != 3)
+		if (userNum.length() != GameNum.LENGTH)
 			throw new IllegalArgumentException();
 		if (!digitPattern.matcher(userNum).matches())
 			throw new IllegalArgumentException();

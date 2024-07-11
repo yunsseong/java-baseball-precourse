@@ -3,6 +3,7 @@ package baseball.controller;
 import java.util.List;
 
 import baseball.model.ComputerNum;
+import baseball.model.GameNum;
 import baseball.view.Message;
 
 public class GameController {
@@ -37,7 +38,7 @@ public class GameController {
 	}
 
 	public boolean isGameEnd(List<Integer> result) {
-		return !result.get(1).equals(3);
+		return !result.get(1).equals(GameNum.LENGTH);
 	}
 
 	public boolean userWantContinue(String userIntention) {
