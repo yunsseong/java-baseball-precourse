@@ -8,6 +8,10 @@ import baseball.model.ComputerNum;
 import baseball.view.Message;
 
 public class GameController {
+	public static final int NUMBER_COUNT = 3;
+	public static final String RESTART = "1";
+	public static final String TERMINATE = "2";
+	public static final int STRIKE = 1;
 	private final Message message = new Message();
 	private final ComputerNum computerNum = new ComputerNum();
 
@@ -24,7 +28,7 @@ public class GameController {
 			validateUserNum(userNums);
 			result = computerNum.getResult(userNums);
 			message.printResult(result);
-		} while (result.get(1) != 3);
+		} while (result.get(STRIKE) != NUMBER_COUNT);
 		System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
 	}
 
@@ -32,7 +36,7 @@ public class GameController {
 		System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
 		String userDecision = message.scanner();
 		validateUserDecision(userDecision);
-		return userDecision.equals("1");
+		return userDecision.equals(RESTART);
 	}
 
 	private void validateUserDecision(String userDecision) {
@@ -67,14 +71,14 @@ public class GameController {
 	}
 
 	private boolean isNotCountRight(String userNums) {
-		return userNums.split("").length != 3;
+		return userNums.split("").length != NUMBER_COUNT;
 	}
 
 	private boolean isNotUnique(String userNums) {
-		return Arrays.stream(userNums.split("")).distinct().count() != 3;
+		return Arrays.stream(userNums.split("")).distinct().count() != NUMBER_COUNT;
 	}
 
 	private boolean isNotDecisionNum(String userDecision) {
-		return !userDecision.equals("1") && !userDecision.equals("2");
+		return !userDecision.equals(RESTART) && !userDecision.equals(TERMINATE);
 	}
 }

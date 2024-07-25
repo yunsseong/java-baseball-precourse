@@ -8,11 +8,12 @@ import java.util.stream.Collectors;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class ComputerNum {
+	public static final int NUMBER_COUNT = 3;
 	private List<Baseball> baseballList = new ArrayList<>();
 
 	public void generateComputerNum() {
 		baseballList = new ArrayList<>();
-		for (int num : generateUniqueNumList(3))
+		for (int num : generateUniqueNumList(NUMBER_COUNT))
 			baseballList.add(new Baseball(num));
 	}
 
