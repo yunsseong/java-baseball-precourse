@@ -11,6 +11,7 @@ public class ComputerNum {
 	private List<Baseball> baseballList = new ArrayList<>();
 
 	public void generateComputerNum() {
+		baseballList = new ArrayList<>();
 		for (int num : generateUniqueNumList(3))
 			baseballList.add(new Baseball(num));
 	}
