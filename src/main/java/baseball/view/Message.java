@@ -1,24 +1,8 @@
 package baseball.view;
 
-import java.util.List;
-
-import camp.nextstep.edu.missionutils.Console;
-
 public class Message {
-	public String scanner(){
-		return Console.readLine();
-	}
 
-	public void printResult(List<Integer> result) {
-		int ballCount = result.get(0);
-		int strikeCount = result.get(1);
-		if(ballCount == 0 && strikeCount == 0)
-			System.out.println("낫싱");
-		if(ballCount > 0 && strikeCount == 0)
-			System.out.println(ballCount+"볼");
-		if(ballCount == 0 && strikeCount > 0)
-			System.out.println(strikeCount+"스트라이크");
-		if(ballCount > 0 && strikeCount > 0)
-			System.out.println(ballCount+"볼 "+strikeCount+"스트라이크");
-	}
+	public final static String INPUT_NUMBER = "숫자를 입력해주세요 : ";
+	public final static String END_SET_GAME = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+	public final static String INPUT_USER_DECISION = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
 }

@@ -1,14 +1,13 @@
 package baseball;
 
-import baseball.controller.GameController;
+import baseball.controller.Controller;
 
 public class Application {
 	public static void main(String[] args) {
-		GameController gameController = new GameController();
+		Controller controller = new Controller();
 		do {
-			gameController.init();
-			gameController.run();
-		} while (gameController.restart());
-
+			controller.init();
+			controller.run();
+		} while (controller.restart());
 	}
 }

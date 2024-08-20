@@ -1,22 +1,21 @@
 package baseball.model;
 
+import static baseball.model.Constant.*;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import baseball.view.Output;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class ComputerNum {
-	public static final int NUMBER_COUNT = 3;
-	public static final int START_NUM = 1;
-	public static final int END_NUM = 9;
-	private List<Baseball> baseballList = new ArrayList<>();
+	private List<Baseball> computerNumList = new ArrayList<>();
 
 	public void generateComputerNum() {
-		baseballList = new ArrayList<>();
+		computerNumList = new ArrayList<>();
 		for (int num : generateUniqueNumList(NUMBER_COUNT))
-			baseballList.add(new Baseball(num));
+			computerNumList.add(new Baseball(num));
 	}
 
 	public List<Integer> generateUniqueNumList(int count) {
@@ -27,33 +26,36 @@ public class ComputerNum {
 		return numList.stream().distinct().collect(Collectors.toList());
 	}
 
-	public List<Integer> getResult(String userNums) {
-		List<Integer> userNumList = stringToIntegerList(userNums);
-		int ballCount = getBallCount(userNumList);
-		int strikeCount = getStrikeCount(userNumList);
-		return new ArrayList<>(Arrays.asList(ballCount - strikeCount, strikeCount));
-	}
-
-	private List<Integer> stringToIntegerList(String string) {
-		return Arrays.asList(string.split(""))
-			.stream()
-			.map(Integer::valueOf)
-			.collect(Collectors.toList());
+	public int result(List<Integer> userNumberList) {
+		int ballCount = getBallCount(userNumberList);
+		int strikeCount = getStrikeCount(userNumberList);
+		Output.printResult(ballCount, strikeCount);
+		return strikeCount;
 	}
 
 	private int getBallCount(List<Integer> userNumList) {
 		int ballCount = 0;
-		for (Baseball baseball : baseballList){
-			if (userNumList.contains(baseball.getDigit()))
+
+		for (int i = 0; i < userNumList.size(); i++) {
+			Integer compareNum = userNumList.get(i);
+			if (!compareNum.equals(computerNumList.get(i).getDigit()) && contain(compareNum))
 				ballCount++;
 		}
 		return ballCount;
 	}
 
+	private boolean contain(Integer compareNum) {
+		for (Baseball baseball : computerNumList) {
+			if(compareNum == baseball.getDigit())
+				return true;
+		}
+		return false;
+	}
+
 	private int getStrikeCount(List<Integer> userNumList) {
 		int strikeCount = 0;
 		for (int i = 0; i < userNumList.size(); i++) {
-			if (baseballList.get(i).isEqual(userNumList.get(i)))
+			if (computerNumList.get(i).isEqual(userNumList.get(i)))
 				strikeCount++;
 		}
 		return strikeCount;

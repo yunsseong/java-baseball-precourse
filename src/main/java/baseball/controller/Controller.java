@@ -8,7 +8,8 @@ import baseball.model.UserNum;
 import baseball.view.Message;
 import baseball.view.Output;
 
-public class GameController {
+public class Controller {
+
 	private final ComputerNum computerNum = new ComputerNum();
 
 	public void init() {
