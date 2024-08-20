@@ -9,6 +9,8 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class ComputerNum {
 	public static final int NUMBER_COUNT = 3;
+	public static final int START_NUM = 1;
+	public static final int END_NUM = 9;
 	private List<Baseball> baseballList = new ArrayList<>();
 
 	public void generateComputerNum() {
@@ -20,7 +22,7 @@ public class ComputerNum {
 	public List<Integer> generateUniqueNumList(int count) {
 		List<Integer> numList = new ArrayList<>();
 		do {
-			numList.add(Randoms.pickNumberInRange(1, 9));
+			numList.add(Randoms.pickNumberInRange(START_NUM, END_NUM));
 		} while (numList.stream().distinct().count() != count);
 		return numList.stream().distinct().collect(Collectors.toList());
 	}
